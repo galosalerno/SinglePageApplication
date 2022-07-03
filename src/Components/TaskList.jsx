@@ -12,8 +12,8 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import Filter from "./Filter";
-import { deleteTodo, editTodo, resetTodoList } from "../api/service";
-import ResetDialog from "./ResetDialog";
+import { deleteTodo, editTodo } from "../api/service";
+
 
 const useStyles = makeStyles({
   input: {

@@ -1,12 +1,12 @@
+import { useEffect, useState } from 'react';
 import Header from './Components/Header';
 import TaskList from './Components/TaskList';
-import './App.css';
 import AddButton from './Components/AddButton';
-import { useEffect, useState } from 'react';
 import Login from './Components/Login';
-import { createTodo, getTodosForUser, resetTodoList } from './api/service';
 import ResetDialog from './Components/ResetDialog';
 import { Modal } from '@material-ui/core';
+import { createTodo, getTodosForUser, resetTodoList } from './api/service';
+import './App.css';
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -30,17 +30,16 @@ function App() {
       async function getData (){
         const userIdStorage = sessionStorage.getItem("userId");
         setUserId(userIdStorage);
-        console.log("UserId",userId);
         const isFirstSession = !sessionStorage.getItem("init");
-        const tareas = await getTasks();
+        const tareas = await getTasks(); //Get tasks from backend
         setTasks(tareas);
-        console.log("Tareas",tareas);
         if(isFirstSession){
           sessionStorage.setItem("init", true);
         }
       }
       getData();
-  },[])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[]) //Only the first render
 
   const resetTasks = async () => {
     setTasks([]);
@@ -55,6 +54,7 @@ function App() {
     setTasks(copyTasks);
     setNewTask("");
   };
+  //Render
   return (
    <>
       {init ? (

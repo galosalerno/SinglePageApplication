@@ -18,14 +18,16 @@ const useStyles = makeStyles({
         height: '48px',
         backgroundColor: '#000',
         color: '#FFFFFF',
-        marginLeft: '0.5rem'
+        marginLeft: '0.5rem',
+        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)' 
     },
     cancelButton: {
         borderRadius: '50px',
         width: '315px',
         height: '48px',
         backgroundColor: '#FAFAFA',
-        color: '#000'
+        color: '#000',
+        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)' 
     },
     actionDialog: {
         display: 'flex',
