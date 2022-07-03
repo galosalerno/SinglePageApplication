@@ -49,7 +49,6 @@ function App() {
   const handleAddTask = async (e) => {
     const copyTasks = [...tasks];
     const response = await createTodo(userId,newTask);
-    console.log("Response",response);
     copyTasks.push(response);
     setTasks(copyTasks);
     setNewTask("");
