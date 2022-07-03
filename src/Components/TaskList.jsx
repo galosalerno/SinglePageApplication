@@ -12,7 +12,8 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import Filter from "./Filter";
-import { deleteTodo, editTodo } from "../api/service";
+import { deleteTodo, editTodo, resetTodoList } from "../api/service";
+import ResetDialog from "./ResetDialog";
 
 const useStyles = makeStyles({
   input: {
@@ -51,11 +52,14 @@ const TaskList = ({
   newTask,
   isEmptyList,
   userId,
-  handleAddTask
+  handleAddTask,
+  open,
+  setOpen,
+  handleOpen
 }) => {
   const classes = useStyles();
   const [filterOption, setFilterOption] = useState("Todos");
-
+  
   const handleChange = (e) => {
     const value = e.target.value;
       setNewTask(value);
@@ -103,7 +107,7 @@ const TaskList = ({
       {!isEmptyList && (
         <Paper className={classes.paper}>
           <div className={classes.flexContainer}>
-            <Button className={classes.title} endIcon={<AddCircleIcon />}>
+            <Button className={classes.title} endIcon={<AddCircleIcon onClick={() => handleOpen()}/>}>
               To do list
             </Button>
             <Filter
