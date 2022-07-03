@@ -1,0 +1,16 @@
+.container {
+  height: 100%;
+  width: 100%;
+  background-color: #F1F1F1;
+  margin: 0.5rem;
+}
+.footer {
+  position: absolute;
+  bottom: 30px;
+}
+.empty-header {
+  height: 10rem;
+}
+
+
+
