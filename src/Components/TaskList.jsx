@@ -20,6 +20,8 @@ const useStyles = makeStyles({
     fontSize: "24px",
     fontFamily: "Helvetica",
     fontStyle: "normal",
+    fontWeight: '700',
+    lineHeight: '28px'
   },
   paper: {
     borderRadius: "20px",
@@ -53,8 +55,6 @@ const TaskList = ({
   isEmptyList,
   userId,
   handleAddTask,
-  open,
-  setOpen,
   handleOpen
 }) => {
   const classes = useStyles();
@@ -130,7 +130,7 @@ const TaskList = ({
                     checked={task.completed}
                     onClick={() => handleToggle(task, idx)}
                   />
-                  <ListItemText id={labelId} primary={task.message} />
+                  <ListItemText id={labelId} primary={task.message}/>
                   <FormControlLabel
                     control={<span className={classes.delete}>Delete</span>}
                     checked={task.completed}
