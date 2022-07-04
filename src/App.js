@@ -39,14 +39,14 @@ function App() {
       }
       getData();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[]) //Only the first render
+  },[init]) 
 
   const resetTasks = async () => {
     setTasks([]);
     await resetTodoList(userId);
     handleClose();
   }
-  const handleAddTask = async (e) => {
+  const handleAddTask = async () => {
     const copyTasks = [...tasks];
     const response = await createTodo(userId,newTask);
     copyTasks.push(response);
