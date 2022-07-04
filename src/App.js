@@ -77,7 +77,7 @@ function App() {
           </div>
         </div>
       ) : (
-        <Login setInit={setInit}/>
+        <Login setInit={setInit}/> //Only de first render.
       )}
 
     </>
